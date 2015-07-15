@@ -13,7 +13,7 @@ for that reason the code is 'interesting' in places ;)*
 # Building
 
 	git clone https://github.com/SeanHeelan/Malamute
-	cd Malamute/bin/gfuzz
+	cd Malamute/bin/mfuzz
 	go install
 
 # Usage
