@@ -1,7 +1,7 @@
 package mutate
 
 import (
-	"github.com/SeanHeelan/malamute/data"
+	"github.com/SeanHeelan/Malamute/data"
 	"io/ioutil"
 	"path/filepath"
 )

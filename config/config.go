@@ -4,7 +4,7 @@ import (
 	"code.google.com/p/gcfg"
 	"errors"
 	"fmt"
-	"github.com/SeanHeelan/malamute/arggen"
+	"github.com/SeanHeelan/Malamute/arggen"
 	"os"
 	"strings"
 )

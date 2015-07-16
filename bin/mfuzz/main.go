@@ -2,11 +2,11 @@ package main
 
 import (
 	"flag"
-	"github.com/SeanHeelan/malamute/config"
-	"github.com/SeanHeelan/malamute/fs"
-	"github.com/SeanHeelan/malamute/logging"
-	"github.com/SeanHeelan/malamute/manage"
-	"github.com/SeanHeelan/malamute/session"
+	"github.com/SeanHeelan/Malamute/config"
+	"github.com/SeanHeelan/Malamute/fs"
+	"github.com/SeanHeelan/Malamute/logging"
+	"github.com/SeanHeelan/Malamute/manage"
+	"github.com/SeanHeelan/Malamute/session"
 	"log"
 	"os"
 )

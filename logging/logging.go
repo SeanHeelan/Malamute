@@ -1,7 +1,7 @@
 package logging
 
 import (
-	"github.com/SeanHeelan/malamute/session"
+	"github.com/SeanHeelan/Malamute/session"
 	"log"
 	"os"
 	"path"

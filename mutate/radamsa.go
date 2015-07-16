@@ -3,9 +3,9 @@ package mutate
 import (
 	"errors"
 	"fmt"
-	"github.com/SeanHeelan/malamute/data"
-	"github.com/SeanHeelan/malamute/logging"
-	"github.com/SeanHeelan/malamute/session"
+	"github.com/SeanHeelan/Malamute/data"
+	"github.com/SeanHeelan/Malamute/logging"
+	"github.com/SeanHeelan/Malamute/session"
 	"log"
 	"os"
 	"os/exec"
