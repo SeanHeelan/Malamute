@@ -13,8 +13,9 @@ for that reason the code is 'interesting' in places ;)*
 # Building
 
 	git clone https://github.com/SeanHeelan/Malamute
-	cd Malamute/bin/mfuzz
-	go install
+	cd Malamute
+	go get ./...
+	go install ./bin/mfuzz
 
 # Usage
 
