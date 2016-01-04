@@ -43,7 +43,7 @@ func (n *Nop) Run(in chan Request, out chan data.TestCase, errOut chan error) {
 		testCasesGenerated++
 		testCasesPerSeed[sourceFile]++
 
-		testCase := data.TestCase{}
+		testCase := data.NewTestCase()
 		testCase.FuzzFilePath = outputFilePath
 		testCase.SeedFilePaths = []string{sourceFile}
 		testCase.SeedFuzzCounts[sourceFile] = testCasesPerSeed[sourceFile]
