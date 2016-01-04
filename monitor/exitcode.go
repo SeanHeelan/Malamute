@@ -5,10 +5,10 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"github.com/kballard/go-shellquote"
 	"github.com/SeanHeelan/Malamute/arggen"
 	"github.com/SeanHeelan/Malamute/config"
 	"github.com/SeanHeelan/Malamute/data"
+	"github.com/kballard/go-shellquote"
 	"io"
 	"io/ioutil"
 	"log"
@@ -85,7 +85,12 @@ func ExitCode(cfg *config.Config, in chan data.TestCase,
 
 		backupDirName := fmt.Sprintf("%d_%s", now, base)
 		backupDirPath := filepath.Join(dir, backupDirName)
-		os.Mkdir(backupDirPath, 0777)
+		if err := os.Mkdir(backupDirPath, 0777); err != nil {
+			msg := fmt.Sprintf("Could not create backup directory %s",
+				backupDirPath)
+			errOut <- errors.New(msg)
+			continue
+		}
 
 		fileData, err := ioutil.ReadFile(fuzzFile)
 		if err != nil {

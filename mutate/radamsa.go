@@ -98,7 +98,16 @@ func (r *Radamsa) Run(in chan Request, out chan data.TestCase,
 
 		for i := 0; i < req.Count; i++ {
 			expectedFileName := fmt.Sprintf("%d_%s", i+1, fileName)
-			expectedFilePath := filepath.Join(workingDir, expectedFileName)
+			var expectedFilePath string
+			var err error
+			if expectedFilePath, err = filepath.Abs(
+				filepath.Join(workingDir, expectedFileName)); err != nil {
+				err := errors.New(
+					fmt.Sprintf("Fuzz file %s was not generated",
+						expectedFilePath))
+				errOut <- err
+				continue
+			}
 
 			if _, err := os.Stat(expectedFilePath); err != nil {
 				err := errors.New(
@@ -206,7 +215,16 @@ func (r *RadamsaMultiFile) Run(in chan Request, out chan data.TestCase,
 
 		for i := 0; i < req.Count; i++ {
 			expectedFileName := fmt.Sprintf("%d_%s", i+1, fileName)
-			expectedFilePath := filepath.Join(workingDir, expectedFileName)
+			var expectedFilePath string
+			var err error
+			if expectedFilePath, err = filepath.Abs(
+				filepath.Join(workingDir, expectedFileName)); err != nil {
+				err := errors.New(
+					fmt.Sprintf("Fuzz file %s was not generated",
+						expectedFilePath))
+				errOut <- err
+				continue
+			}
 
 			if _, err := os.Stat(expectedFilePath); err != nil {
 				err := errors.New(

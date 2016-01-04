@@ -88,6 +88,14 @@ func ReadPathsFromFile(file string) ([]string, error) {
 			return result, errors.New(msg)
 		}
 
+		if !filepath.IsAbs(path) {
+			if path, err := filepath.Abs(path); err != nil {
+				msg := fmt.Sprintf("%s could not create absolute path from %s",
+					path)
+				return result, errors.New(msg)
+			}
+		}
+
 		result = append(result, path)
 	}
 
